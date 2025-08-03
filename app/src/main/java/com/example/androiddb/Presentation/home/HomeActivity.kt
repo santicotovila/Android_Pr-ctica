@@ -13,7 +13,7 @@ import com.example.androiddb.databinding.HomeHeroesBinding
 
 class HomeActivity : AppCompatActivity() {
     private lateinit var binding: HomeHeroesBinding
-    val viewModel = HerosViewModel by ViewModel()
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {

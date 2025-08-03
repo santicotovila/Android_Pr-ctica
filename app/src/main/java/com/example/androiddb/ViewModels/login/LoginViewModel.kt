@@ -1,6 +1,7 @@
 package com.example.androiddb.ViewModels.login
 
 
+import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.androiddb.MainState
@@ -28,6 +29,7 @@ class LoginViewModel(
             when (response) {
                 is UserRepositoryInterface.LoginResponse.Success -> {
                     val token = response.token
+
                     _mainState.update { MainState.LoginSuccessfull(token) }
                 }
 
