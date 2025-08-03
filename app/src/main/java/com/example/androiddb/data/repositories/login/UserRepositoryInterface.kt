@@ -1,5 +1,7 @@
 package com.example.androiddb.data.repositories.login
 
+import com.example.androiddb.data.repositories.heroes.HeroRepositoryInterface
+
 interface UserRepositoryInterface {
 
     sealed class LoginResponse {
@@ -7,5 +9,6 @@ interface UserRepositoryInterface {
         data class Error(val message: String, val code: Int) : LoginResponse()
     }
     suspend fun performLoginRequest(user: UserLogin): LoginResponse
-    suspend fun performGetHerosRequest(token: String)
+    suspend fun performGetHeroes(token: String): HeroRepositoryInterface.DownloadHeroesResponse
+
 }

@@ -1,6 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:padding="25dp">
+
+    <ImageView
+        android:id="@+id/imgHero"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <TextView
+        android:id="@+id/txtHeroName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        tools:text = "Goku"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:layout_marginStart="12dp"
+        app:layout_constraintStart_toEndOf="@id/imgHero"
+        app:layout_constraintTop_toTopOf="@id/imgHero"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ProgressBar
+        android:id="@+id/progressLife"
+        style ="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="0dp"
+        android:layout_height="12dp"
+        android:layout_marginTop="20dp"
+        android:progress="100"
+        android:max="100"
+        android:progressTint="#F80505"
+        app:layout_constraintTop_toBottomOf="@id/txtHeroName"
+        app:layout_constraintStart_toStartOf="@id/txtHeroName"
+        app:layout_constraintEnd_toEndOf="@id/txtHeroName" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -3,4 +3,5 @@
     <string name="email">Email</string>
     <string name="password">Password</string>
     <string name="login">Continue</string>
+    <string name="title_activity_home">HomeActivity</string>
 </resources>
