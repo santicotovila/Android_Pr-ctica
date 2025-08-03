@@ -1,5 +1,6 @@
 package com.example.androiddb.Presentation.home
 
+import android.content.Intent
 import android.os.Binder
 import android.os.Bundle
 import android.util.Log
@@ -14,8 +15,10 @@ import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.androiddb.MainState
+import com.example.androiddb.Presentation.detail.DetailActivity
 
 import com.example.androiddb.ViewModels.heros.HerosViewModel
+import com.example.androiddb.data.entities.Heroes
 import com.example.androiddb.databinding.HomeHeroesBinding
 import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -39,7 +42,9 @@ class HomeActivity : AppCompatActivity() {
 
         // 🛠 Configuramos el RecyclerView
         adapter = HomeHeros { hero ->
-
+            val intent = Intent(this, DetailActivity::class.java)
+            intent.putExtra("Hero_PHOTO",hero.photo)
+            startActivity(intent)
         }
 
         binding.rvHeroes.adapter = adapter
