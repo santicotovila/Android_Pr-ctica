@@ -11,27 +11,31 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 
-class HerosViewModel( private val heroRepository: HeroRepositoryInterface): ViewModel() {
-
+class HerosViewModel(
+    private val heroRepository: HeroRepositoryInterface
+) : ViewModel() {
 
     private val _mainState = MutableStateFlow<MainState>(MainState.Idle)
     val mainState: StateFlow<MainState> = _mainState
 
-    fun downloadHeros(token: String) {
+    fun getHeros(token: String) {
         viewModelScope.launch(Dispatchers.IO) {
-            val response = heroRepository.performDownloadHerosRequest(token)
+            _mainState.update { MainState.Loading }
+
+            val response = heroRepository.performGetHeroes(token)
+
             when (response) {
                 is HeroRepositoryInterface.DownloadHeroesResponse.Success -> {
                     _mainState.update {
                         MainState.HeroDownloaded(response.heroes)
                     }
                 }
+
                 is HeroRepositoryInterface.DownloadHeroesResponse.Error -> {
                     _mainState.update {
                         MainState.Error(response.message)
                     }
                 }
-
             }
         }
     }

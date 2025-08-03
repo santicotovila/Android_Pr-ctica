@@ -19,7 +19,7 @@ import okhttp3.RequestBody.Companion.toRequestBody
 
 
 
-class NetworkService : UserRepositoryInterface {
+class NetworkService : UserRepositoryInterface, HeroRepositoryInterface {
     override suspend fun performLoginRequest(user: UserLogin): UserRepositoryInterface.LoginResponse {
         val client = OkHttpClient()
         val url = "${BASE_URL}auth/login"

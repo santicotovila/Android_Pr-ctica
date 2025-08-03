@@ -9,6 +9,6 @@ interface UserRepositoryInterface {
         data class Error(val message: String, val code: Int) : LoginResponse()
     }
     suspend fun performLoginRequest(user: UserLogin): LoginResponse
-    suspend fun performGetHeroes(token: String): HeroRepositoryInterface.DownloadHeroesResponse
+
 
 }

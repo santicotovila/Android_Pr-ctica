@@ -15,10 +15,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidDB" >
         <activity
-            android:name=".Presentation.home.HomeActivity"
-            android:exported="false" />
+            android:name=".Presentation.login"
+            android:exported="true" >
         <activity
-            android:name=".Presentation.home.HomeActivity"
+            android:name="Presentation.home.HomeActivity"
             android:exported="false"
             android:label="@string/title_activity_home"
             android:theme="@style/Theme.AndroidDB" />

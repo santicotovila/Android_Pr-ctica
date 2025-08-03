@@ -6,11 +6,14 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.example.androiddb.R
+import androidx.lifecycle.ViewModel
+
+import com.example.androiddb.ViewModels.heros.HerosViewModel
 import com.example.androiddb.databinding.HomeHeroesBinding
 
 class HomeActivity : AppCompatActivity() {
     private lateinit var binding: HomeHeroesBinding
+    val viewModel = HerosViewModel by ViewModel()
 
 
     override fun onCreate(savedInstanceState: Bundle?) {

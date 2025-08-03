@@ -10,5 +10,5 @@ interface HeroRepositoryInterface {
         data class Error(val message: String, val code: Int) : DownloadHeroesResponse()
     }
 
-    suspend fun performDownloadHerosRequest(token: String): DownloadHeroesResponse
+    suspend fun performGetHeroes(token: String): DownloadHeroesResponse
 }
