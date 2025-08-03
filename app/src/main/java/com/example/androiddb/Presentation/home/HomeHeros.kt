@@ -19,10 +19,10 @@ class HomeHeros(private val onItemClicked: (Heroes) -> Unit) : RecyclerView.Adap
         notifyDataSetChanged()
     }
 
-    inner class MainViewHolder(private val binding: FragmentsDetailBinding ): RecyclerView.ViewHolder(binding.root) {
+    inner class MainViewHolder(private val binding: FragmentsDetailBinding): RecyclerView.ViewHolder(binding.root) {
         fun bind(cell: Heroes) {
             binding.txtHeroName.text = cell.name
-            Glide.with(binding.imgHero.context).load(cell.photo).into(binding.imgHero)
+            Glide.with(itemView.context).load(cell.photo).into(binding.imgHero)
             binding.root.setOnClickListener {
                 onItemClicked(cell)
             }

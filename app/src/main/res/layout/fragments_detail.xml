@@ -19,7 +19,6 @@
         android:id="@+id/txtHeroName"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        tools:text = "Goku"
         android:textStyle="bold"
         android:textSize="18sp"
         android:layout_marginStart="12dp"

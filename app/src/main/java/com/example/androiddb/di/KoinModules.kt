@@ -11,6 +11,7 @@ import org.koin.core.module.dsl.viewModel
 import org.koin.dsl.module
 
 val repositoryModule = module {
+    single { NetworkService() }
     single<UserRepositoryInterface> { NetworkService() }
     single<HeroRepositoryInterface> { HeroRepositoryImpl(get())}
 }

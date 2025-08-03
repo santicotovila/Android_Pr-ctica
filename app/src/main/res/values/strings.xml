@@ -4,4 +4,8 @@
     <string name="password">Password</string>
     <string name="login">Continue</string>
     <string name="title_activity_home">HomeActivity</string>
+    <string name="attack">Attack</string>
+    <string name="heal" />
+    <string name="life">Life\n</string>
+    <string name="Life">Life</string>
 </resources>

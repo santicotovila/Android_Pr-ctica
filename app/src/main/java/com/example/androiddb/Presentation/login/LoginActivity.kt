@@ -37,6 +37,7 @@ class LoginActivity : AppCompatActivity() {
                 when (state) {
                     is MainState.LoginSuccessfull -> {
                         val intent = Intent(this@LoginActivity, HomeActivity::class.java)
+                        intent.putExtra("TOKEN", state.token)
                         startActivity(intent)
                     }
                     is MainState.Loading -> {
