@@ -44,6 +44,7 @@ class HomeActivity : AppCompatActivity() {
         adapter = HomeHeros { hero ->
             val intent = Intent(this, DetailActivity::class.java)
             intent.putExtra("Hero_PHOTO",hero.photo)
+            intent.putExtra("Hero_ID",hero.id)
             startActivity(intent)
         }
 

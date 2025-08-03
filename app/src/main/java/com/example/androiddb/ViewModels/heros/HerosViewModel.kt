@@ -4,6 +4,7 @@ package com.example.androiddb.ViewModels.heros
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.androiddb.MainState
+import com.example.androiddb.data.entities.Heroes
 import com.example.androiddb.data.repositories.heroes.HeroRepositoryInterface
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -39,4 +40,25 @@ class HerosViewModel(
             }
         }
     }
+
+    fun getHeroForID(id: String): Heroes? {
+        val currentState = _mainState.value
+        return if (currentState is MainState.HeroDownloaded) {
+            currentState.heroes.find { it.id == id }
+        } else {
+            null
+        }
+    }
+    fun updateHero(updatedHero: Heroes) {
+        val currentState = _mainState.value
+        if (currentState is MainState.HeroDownloaded) {
+            val newList = currentState.heroes.map { hero ->
+                if (hero.id == updatedHero.id) updatedHero else hero
+            }
+            _mainState.value = MainState.HeroDownloaded(newList)
+        }
+    }
+
+
+
 }

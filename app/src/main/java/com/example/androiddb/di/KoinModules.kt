@@ -17,6 +17,6 @@ val repositoryModule = module {
 }
 
 val viewModelModule = module {
-    viewModel { HerosViewModel(get()) }
+    single { HerosViewModel(get()) }
     viewModel { LoginViewModel(get()) }
 }
