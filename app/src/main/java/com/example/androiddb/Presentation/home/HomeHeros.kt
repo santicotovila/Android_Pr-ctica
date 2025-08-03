@@ -2,7 +2,6 @@ package com.example.androiddb.Presentation.home
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.AdapterView
 import com.bumptech.glide.Glide
 import androidx.recyclerview.widget.RecyclerView
 import com.example.androiddb.data.entities.Heroes

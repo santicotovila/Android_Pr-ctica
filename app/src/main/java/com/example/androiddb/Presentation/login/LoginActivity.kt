@@ -31,7 +31,7 @@ class LoginActivity : AppCompatActivity() {
             }
         }
 
-        // ✅ Observar cambios del ViewModel
+
         lifecycleScope.launch {
             loginViewModel.mainState.collect { state ->
                 when (state) {

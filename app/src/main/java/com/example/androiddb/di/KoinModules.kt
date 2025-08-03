@@ -17,6 +17,6 @@ val repositoryModule = module {
 }
 
 val viewModelModule = module {
-    single { HerosViewModel(get()) }
+    single { HerosViewModel(get()) } // Lo hize single para compartir el mismo ViewModel y poder conservar la vida entre pantallas pero aun asi no lo conseguí,pense en utilizar sharedPreference que enseñaste en clase pero supongo que es mas apropiado para credenciales.
     viewModel { LoginViewModel(get()) }
 }

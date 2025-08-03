@@ -1,6 +1,5 @@
 package com.example.androiddb.data.repositories.login
 
-import com.example.androiddb.data.repositories.heroes.HeroRepositoryInterface
 
 interface UserRepositoryInterface {
 

@@ -1,12 +1,8 @@
 package com.example.androiddb.Presentation.detail
 
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.bumptech.glide.Glide
-import com.example.androiddb.R
 import com.example.androiddb.ViewModels.heros.HerosViewModel
 import com.example.androiddb.databinding.DetailHeroBinding
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -29,7 +25,7 @@ class DetailActivity : AppCompatActivity() {
             Glide.with(this).load(it).into(binding.imgHeroDetail)
         }
         val heroID = intent.getStringExtra("Hero_ID")?:return
-        var currentHero = heroesViewModel.getHeroForID(heroID) ?: return
+        var currentHero = heroesViewModel.getHeroForID(heroID)
 
 
         binding.buttonAttack.setOnClickListener {
@@ -47,10 +43,8 @@ class DetailActivity : AppCompatActivity() {
                 heroesViewModel.updateHero(updatedHero)
                 binding.progressLifeDetail.progress = updatedHero.life
             }
+
         }
-
-
-
 
     }
 }
